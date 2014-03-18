@@ -25,9 +25,8 @@ $(function() {
     // return the value of the city and if ther is any spaces they will be replaced with a '_' for ajax request
     $state = $state.val().trim().toUpperCase();
 
-
-    console.log($city);
-    console.log($state);
+    // console.log($city);
+    // console.log($state);
 
     $.ajax({
       url : "http://api.wunderground.com/api/441472960cf74c21/conditions/q/"+ $state + "/" + $city + ".json",
