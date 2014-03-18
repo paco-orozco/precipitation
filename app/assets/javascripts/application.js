@@ -21,22 +21,25 @@ $(function() {
   $('input[name="commit"]').click(function(event) {
     event.preventDefault(); // this will prevent a post to the server
 
-    $city = $city.val();
-    $state = $state.val();
+    $city = $city.val().trim().replace(/\s+/g, "_");
+    // return the value of the city and if ther is any spaces they will be replaced with a '_' for ajax request
+    $state = $state.val().trim().toUpperCase();
 
 
     console.log($city);
     console.log($state);
 
     $.ajax({
-      url : "http://api.wunderground.com/api/441472960cf74c21/geolookup/conditions/q/IA/Cedar_Rapids.json",
+      url : "http://api.wunderground.com/api/441472960cf74c21/conditions/q/"+ $state + "/" + $city + ".json",
       dataType : "jsonp",
       success : function(parsed_json) {
-      var location = parsed_json['location']['city'];
-      var temp_f = parsed_json['current_observation']['temp_f'];
-      // alert("Current temperature in " + location + " is: " + temp_f);
-      $('#weather').html('<h3>The Complete Works of ' + location + temp_f + '</h3>')
-      console.log(parsed_json)
+        var location = parsed_json['current_observation']['display_location']['city']
+        var temp = parsed_json['current_observation']['temp_f'];
+        var weather = parsed_json['current_observation']['weather']
+
+        console.log(location);
+        console.log(temp);
+        console.log(weather);
       }
     });// end of ajax request
 
