@@ -1,6 +1,6 @@
 <h1> Hola Mundo! </h1>
 <%= form_tag('/environments', :remote => true) do %>
-    <%= text_field_tag "location", nil, :placeholder => "city", :size => 30 %>
+    <%= text_field_tag "city", nil, :placeholder => "city", :size => 30 %>
     <%= text_field_tag "state", nil, :placeholder => "state", :size => 30 %>
     <%= submit_tag "Run", :id => "button" %>
 <% end %>

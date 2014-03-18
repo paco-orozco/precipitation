@@ -15,6 +15,31 @@
 //= require_tree .
 
 $(function() {
-  var $
+  var $city = $('#city');
+  var $state = $('#state');
 
-})
+  $('input[name="commit"]').click(function(event) {
+    event.preventDefault(); // this will prevent a post to the server
+
+    $city = $city.val();
+    $state = $state.val();
+
+
+    console.log($city);
+    console.log($state);
+
+    $.ajax({
+      url : "http://api.wunderground.com/api/441472960cf74c21/geolookup/conditions/q/IA/Cedar_Rapids.json",
+      dataType : "jsonp",
+      success : function(parsed_json) {
+      var location = parsed_json['location']['city'];
+      var temp_f = parsed_json['current_observation']['temp_f'];
+      // alert("Current temperature in " + location + " is: " + temp_f);
+      $('#weather').html('<h3>The Complete Works of ' + location + temp_f + '</h3>')
+      console.log(parsed_json)
+      }
+    });// end of ajax request
+
+  }); // end of input action
+
+});
