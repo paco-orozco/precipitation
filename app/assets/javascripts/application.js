@@ -75,16 +75,31 @@ $(function() {
               // +++++++++++++++++++ parse through our arrays to determine the icons
               for(var i=0; i<green.length; i++){
                 if(weather == green[i]) {
-                  $('#results').append('<img src="assets/running-256.png"/>')
+                  $('#results').append('<img src="assets/running-256.png"/>
+                                        <img src="assets/partly_cloudy_day-256.png')
                 }
               }
               // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               for(var j=0; j<red.length; j++){
                 if(weather == red[j]) {
-                  $('#results').append('<img src="assets/livingroom-256.png"/>')
+                  $('#results').append('<img src="assets/livingroom-256.png"/>
+                                        <img src="assets/rain-256.png')
                 }
               }
               // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+              for(var k=0; k<danger.length; k++){
+                if(weather == danger[k]) {
+                  $('#results').append('<img src="assets/self_distruct_button-256.png"/>
+                                        <img src="assets/explosion-256.png')
+                }
+              }
+              // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+              for(var l=0; l<visibility.length; l++){
+                if(weather == visibility[l]) {
+                  $('#results').append('<img src="assets/flashlight-256.png"/>
+                                        <img src="assets/fog_night-256.png')
+                }
+              }
             }
           }) // end  of nested AJAX call (weather conditions)
         }
