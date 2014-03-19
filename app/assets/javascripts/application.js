@@ -44,10 +44,21 @@ $(function() {
           console.log(state);
           // ++++++++++++++++ We will insert our city and state values into the conditions ajax call
           $.ajax({
-            url : "http://api.wunderground.com/api/441472960cf74c21/conditions/q/CA/San_Francisco.json"
-          })
+            url : "http://api.wunderground.com/api/441472960cf74c21/conditions/q/" + state + "/" + city + ".json",
+            dataType : "jsonp",
+            success : function(parsed_json) {
+              // console.log(parsed_json);
+              var location = parsed_json['current_observation']['display_location']['city']
+              var temp = parsed_json['current_observation']['temp_f'];
+              var weather = parsed_json['current_observation']['weather']
+
+              console.log(location);
+              console.log(temp);
+              console.log(weather);
+            }
+          }) // end  of nested AJAX call (weather conditions)
         }
-      }); // end of initial AJAX call
+      }); // end of initial AJAX call (geolocation)
     }; // end of success function
 
     function error() {
