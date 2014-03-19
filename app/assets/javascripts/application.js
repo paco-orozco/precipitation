@@ -97,6 +97,19 @@ $(function() {
                 }
               }
               // ++++++++++++++++++++++ end of initial append +++++++++++++++++++++
+              if(temp > 70 && temp < 98) {
+                $('#results').html('<img src="assets/t_shirt-256.png"/>')
+              }
+              else if(temp > 45 && temp < 70) {
+                $('#results').html('<img src="assets/jumper-256.png"/>')
+              }
+              else if(temp < 45) {
+                $('#results').html('<img src="assets/jacket-256.png"/>')
+              }
+              else if(temp > 98) {
+                $('#results').html('<img src="assets/shorts-256.png"/>')
+              }
+             //++++++++++++++++++++++++++++++++++++++++++++++++
             }
           }) // end  of nested AJAX call (weather conditions)
         }
