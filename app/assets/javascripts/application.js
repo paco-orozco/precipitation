@@ -75,9 +75,13 @@ $(function() {
               // +++++++++++++++++++ parse through our arrays to determine the icons
               for(var i=0; i<green.length; i++){
                 if(weather == green[i]) {
-                  console.log('it works!');
-                  $('#results').append('<img src="assets/running-128.png"/>');
                   $('#results').append('<img src="assets/running-256.png"/>')
+                }
+              }
+              // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+              for(var j=0; j<red.length; j++){
+                if(weather == red[j]) {
+                  $('#results').append('<img src="assets/livingroom-256.png"/>')
                 }
               }
               // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
