@@ -39,12 +39,16 @@ $(function() {
           console.log(parsed_json)
           var city = parsed_json['location']['city'];
           var state = parsed_json['location']['state'];
+          city = city.replace(/\s+/g, "_");
           console.log(city);
           console.log(state);
-
+          // ++++++++++++++++ We will insert our city and state values into the conditions ajax call
+          $.ajax({
+            url : "http://api.wunderground.com/api/441472960cf74c21/conditions/q/CA/San_Francisco.json"
+          })
         }
-      });
-    };
+      }); // end of initial AJAX call
+    }; // end of success function
 
     function error() {
       $('#out').html("Unable to retrieve your location");
