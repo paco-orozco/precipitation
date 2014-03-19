@@ -75,7 +75,8 @@ $(function() {
               // +++++++++++++++++++ parse through our arrays to determine the icons
               for(var i=0; i<green.length; i++){
                 if(weather == green[i]) {
-                  console.log('it works!')
+                  console.log('it works!');
+                  $('#results').append('<img src="assets/running-128.png"/>');
                 }
               }
               // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
