@@ -77,6 +77,7 @@ $(function() {
                 if(weather == green[i]) {
                   console.log('it works!');
                   $('#results').append('<img src="assets/running-128.png"/>');
+                  $('#results').append('<img src="assets/running-256.png"/>')
                 }
               }
               // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
