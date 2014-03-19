@@ -17,7 +17,28 @@
 
 
 $(function() {
-  var $output = $('#out');
+  // +++++++++++++++++++++++++++ Our Variables are very important ++++++++++++++++++++
+  // this output element will be used to handle error notification and animation
+  var $output = $('#out'); // the search div will only be shown as a default
+  var visibility = ['Light Mist', 'Heavy Mist', 'Light Fog', 'Heavy Fog', 'Light Fog Patches',
+  'Heavy Fog Patches', 'Patches of Fog', 'Shallow Fog', 'Partial Fog', 'Overcast', 'Light Haze',
+  'Heavy Haze'];
+  var green = ['Clear', 'Partly Cloudy', 'Mostly Cloudy', 'Scattered Clouds'];
+  var red = ['Light Drizzle', 'Heavy Drizzle', 'Light Rain', 'Heavy Rain', 'Light Snow', 'Heavy Snow',
+  'Light Snow Grains', 'Heavy Snow Grains', 'Light Ice Crystals', 'Heavy Ice Crystals', 'Light Ice Pellets',
+  'Heavt Ice Pellets', 'Light Hail', 'Heavy Hail', 'Light Snow Showers', 'Heavy Snow Showers', 'Light Snow Blowing Snow Mist',
+  'Heavy Snow Blowing Snow Mist', 'Light Ice Pellet Showers', 'Heavy Ice Pellet Showers', 'Light Hail Showers',
+  'Heavy Hail Showers', 'Light Small Hail Showers', 'Heavy Small Hail Showers', 'Light Thunderstorm',
+  'Heavy Thunderstorm', 'Light Thunderstorms and Rain', 'Heavy Thunderstorms and Rain', 'Light Thunderstorms and Snow',
+  'Heavy Thunderstorms and Snow', 'Light Thunderstorms and Ice Pellets', 'Heavy Thunderstorms and Ice Pellets',
+  'Light Thunderstorms with Hail', 'Heavy Thunderstorms with Hail', 'Light Thunderstorms with Small Hail',
+  'Heavy Thunderstorms with Small Hail', 'Light Freezing Drizzle', 'Heavy Freezing Drizzle', 'Light Freezing Rain',
+  'Heavy Freezing Rain', 'Light Freezing Fog', 'Heavy Freezing Fog'];
+  var danger = ['Light Volcanic Ash', 'Heavy Volcanic Ash', 'Light Widespread Dust', 'Heavy Widespread Dust',
+  'Light Sand', 'Heavy Sand', 'Light Spray', 'Heavy Spray', 'Light Dust Whirls', 'Heavy Dust Whirls',
+  'Light Sandstorm', 'Heavy Sandstorm'];
+  // +++++++++++++++++++++++ End of our Variables ++++++++++++++++++++++++++++++++
+  $('#search').hide();
 
     if (!navigator.geolocation){
       // navigator.geolocation is the object that publishes the geolocation API
@@ -51,6 +72,13 @@ $(function() {
               console.log(weather);
               $('#out').hide();
               $('#results').append('<h1>' + location + temp + weather +'</h1>')
+              // +++++++++++++++++++ parse through our arrays to determine the icons
+              for(var i=0; i<green.length; i++){
+                if(weather == green[i]) {
+                  console.log('it works!')
+                }
+              }
+              // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             }
           }) // end  of nested AJAX call (weather conditions)
         }

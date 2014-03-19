@@ -13,3 +13,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore all files from OSX finder
+*/.DS_Store
+app/assets/.DS_Store
+.DS_Store
