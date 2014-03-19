@@ -31,6 +31,19 @@ $(function() {
 
       console.log(latitude);
       console.log(longitude);
+
+      $.ajax({
+        url : "http://api.wunderground.com/api/441472960cf74c21/geolookup/q/" + latitude + "," + longitude + ".json",
+        dataType : "jsonp",
+        success : function(parsed_json) {
+          console.log(parsed_json)
+          var city = parsed_json['location']['city'];
+          var state = parsed_json['location']['state'];
+          console.log(city);
+          console.log(state);
+
+        }
+      });
     };
 
     function error() {
