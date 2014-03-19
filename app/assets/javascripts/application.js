@@ -50,9 +50,7 @@ $(function() {
               console.log(temp);
               console.log(weather);
               $('#out').hide();
-              $('#results').append('<h1>' + location + '</h1><br>' +
-                                   '<h1>' + temp + '</h1><br>' +
-                                   '<h1>' + weather + '</h1><br>' +)
+              $('#results').append('<h1>' + location + temp + weather +'</h1>')
             }
           }) // end  of nested AJAX call (weather conditions)
         }
