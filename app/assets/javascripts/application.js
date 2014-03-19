@@ -15,36 +15,35 @@
 //= require_tree .
 
 
-  function geoFindMe() {
-    var output = document.getElementById("out");
+
+$(function() {
+  var $output = $('#out');
 
     if (!navigator.geolocation){
       // navigator.geolocation is the object that publishes the geolocation API
       // if the API is not supported it will output an error
-      output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
-      return;
+      $output.html("<p>Geolocation is not supported by your browser</p>");
     }
 
     function success(position) {
       var latitude  = position.coords.latitude;
       var longitude = position.coords.longitude;
 
-      output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+      console.log(latitude);
+      console.log(longitude);
     };
 
     function error() {
-      output.innerHTML = "Unable to retrieve your location";
+      $('#out').html("Unable to retrieve your location");
     };
 
-    output.innerHTML = "<p>Locating…</p>";
+
+    $('#out').html("<p>Locating…</p>");
 
     navigator.geolocation.getCurrentPosition(success, error);
-  }
 
 
-$(document).ready(function() {
-  geoFindMe();
-});
+})
 // $(function() {
 //   var $city = $('#city');
 //   var $state = $('#state');
