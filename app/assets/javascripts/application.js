@@ -75,39 +75,43 @@ $(function() {
               // +++++++++++++++++++ parse through our arrays to determine the icons
               for(var i=0; i<green.length; i++){
                 if(weather == green[i]) {
-                  $('#results').append('<img src="assets/running-256.png"/>');
+                  $('#action').append('<img src="assets/running-256.png"/>');
+                  $('#climate').append('<img src="assets/partly_cloudy_day-256.png"/>');
                 }
               }
               // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               for(var j=0; j<red.length; j++){
                 if(weather == red[j]) {
-                  $('#results').append('<img src="assets/livingroom-256.png"/>');
+                  $('#action').append('<img src="assets/livingroom-256.png"/>');
+                  $('#climate').append('<img src="assets/rain-256.png"/>');
                 }
               }
               // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               for(var k=0; k<danger.length; k++){
                 if(weather == danger[k]) {
-                  $('#results').append('<img src="assets/self_distruct_button-256.png"/>');
+                  $('#action').append('<img src="assets/self_distruct_button-256.png"/>');
+                  $('#climate').append('<img src="assets/explosion-256.png"/>');
                 }
               }
               // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               for(var l=0; l<visibility.length; l++){
                 if(weather == visibility[l]) {
-                  $('#results').append('<img src="assets/flashlight-256.png"/>');
+                  $('#action').append('<img src="assets/flashlight-256.png"/>');
+                  $('#climate').append('<img src="assets/fog_night-256.png"/>');
                 }
               }
               // ++++++++++++++++++++++ end of initial append +++++++++++++++++++++
               if(temp > 70 && temp < 98) {
-                $('#results').html('<img src="assets/t_shirt-256.png"/>')
+                $('#clothing').html('<img src="assets/t_shirt-256.png"/>')
               }
               else if(temp > 45 && temp < 70) {
-                $('#results').html('<img src="assets/jumper-256.png"/>')
+                $('#clothing').html('<img src="assets/jumper-256.png"/>')
               }
               else if(temp < 45) {
-                $('#results').html('<img src="assets/jacket-256.png"/>')
+                $('#clothing').html('<img src="assets/jacket-256.png"/>')
               }
               else if(temp > 98) {
-                $('#results').html('<img src="assets/shorts-256.png"/>')
+                $('#clothing').html('<img src="assets/shorts-256.png"/>')
               }
              //++++++++++++++++++++++++++++++++++++++++++++++++
             }
