@@ -26,28 +26,22 @@ $(function() {
     }
 
     function success(position) {
+      // these points will determine our geolocation and will be used for our API calls
       var latitude  = position.coords.latitude;
       var longitude = position.coords.longitude;
-
-      console.log(latitude);
-      console.log(longitude);
 
       $.ajax({
         url : "http://api.wunderground.com/api/441472960cf74c21/geolookup/q/" + latitude + "," + longitude + ".json",
         dataType : "jsonp",
         success : function(parsed_json) {
-          console.log(parsed_json)
           var city = parsed_json['location']['city'];
           var state = parsed_json['location']['state'];
           city = city.replace(/\s+/g, "_");
-          console.log(city);
-          console.log(state);
           // ++++++++++++++++ We will insert our city and state values into the conditions ajax call
           $.ajax({
             url : "http://api.wunderground.com/api/441472960cf74c21/conditions/q/" + state + "/" + city + ".json",
             dataType : "jsonp",
             success : function(parsed_json) {
-              // console.log(parsed_json);
               var location = parsed_json['current_observation']['display_location']['city']
               var temp = parsed_json['current_observation']['temp_f'];
               var weather = parsed_json['current_observation']['weather']
@@ -69,7 +63,6 @@ $(function() {
     $('#out').html("<p>Locating…</p>");
 
     navigator.geolocation.getCurrentPosition(success, error);
-
 
 })
 // $(function() {
