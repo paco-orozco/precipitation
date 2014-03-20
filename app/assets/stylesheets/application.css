@@ -126,3 +126,8 @@
   .show-phone,.hide-tablet,.hide-screen{display:inherit !important}
   .show-tablet,.show-screen,.hide-phone{display:none !important}
   }
+
+  img {
+    display: block;
+    margin: auto;
+  }
