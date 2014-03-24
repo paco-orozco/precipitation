@@ -59,11 +59,70 @@ $(function() {
       // capitalize the state
       city = $('#city').val().trim().replace(/\s+/g, "_");
       state = $('#state').val().trim().toUpperCase();
+      if(city == "") {
+        $('#action').append('<h2>error</h2>')
+      } else {
+      // make sure that our form has values
+        $.ajax({
+          url : "http://api.wunderground.com/api/441472960cf74c21/conditions/q/" + state + "/" + city + ".json",
+          dataType : "jsonp",
+          success : function(parsed_json) {
+            var location = parsed_json['current_observation']['display_location']['city']
+            var temp = parsed_json['current_observation']['temp_f'];
+            var weather = parsed_json['current_observation']['weather']
 
-
-    })
-
-  }
+            console.log(location);
+            console.log(temp);
+            console.log(weather);
+            $('#search').hide();
+            $('#results').append('<h1>' + location + temp + weather +'</h1>')
+            // +++++++++++++++++++ parse through our arrays to determine the icons
+            for(var i=0; i<green.length; i++){
+              if(weather == green[i]) {
+                $('#action').append('<img src="assets/running-256.png"/>');
+                $('#climate').append('<img src="assets/partly_cloudy_day-256.png"/>');
+              }
+            }
+            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            for(var j=0; j<red.length; j++){
+              if(weather == red[j]) {
+                $('#action').append('<img src="assets/livingroom-256.png"/>');
+                $('#climate').append('<img src="assets/rain-256.png"/>');
+              }
+            }
+            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            for(var k=0; k<danger.length; k++){
+              if(weather == danger[k]) {
+                $('#action').append('<img src="assets/self_distruct_button-256.png"/>');
+                $('#climate').append('<img src="assets/explosion-256.png"/>');
+              }
+            }
+            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            for(var l=0; l<visibility.length; l++){
+              if(weather == visibility[l]) {
+                $('#action').append('<img src="assets/flashlight-256.png"/>');
+                $('#climate').append('<img src="assets/fog_night-256.png"/>');
+              }
+            }
+            // ++++++++++++++++++++++ end of initial append +++++++++++++++++++++
+            if(temp > 70 && temp < 98) {
+              $('#clothing').html('<img src="assets/t_shirt-256.png"/>')
+            }
+            else if(temp > 45 && temp < 70) {
+              $('#clothing').html('<img src="assets/jumper-256.png"/>')
+            }
+            else if(temp < 45) {
+              $('#clothing').html('<img src="assets/jacket-256.png"/>')
+            }
+            else if(temp > 98) {
+              $('#clothing').html('<img src="assets/shorts-256.png"/>')
+            }
+           //++++++++++++++++++++++++++++++++++++++++++++++++
+          }
+        })//end of ajax
+      }
+    })//end of input function
+  }// end of getLocation
 
     if (!navigator.geolocation){
       // navigator.geolocation is the object that publishes the geolocation API
