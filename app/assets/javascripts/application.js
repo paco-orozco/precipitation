@@ -127,7 +127,7 @@ $(function() {
     if (!navigator.geolocation){
       // navigator.geolocation is the object that publishes the geolocation API
       // if the API is not supported it will output an error
-      $output.html("<p>Geolocation is not supported by your browser</p>");
+      $output.html("<h1>Geolocation is not supported by your browser</h1>");
       getLocation();
 
     }
@@ -207,7 +207,7 @@ $(function() {
     }; // end of success function
 
     function error() {
-      $('#out').html("Unable to retrieve your location");
+      $('#out').html("<h1>Unable to retrieve your location</h1>");
       getLocation();
     };
 
