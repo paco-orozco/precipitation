@@ -20,6 +20,11 @@ $(function() {
   // +++++++++++++++++++++++++++ Our Variables are very important ++++++++++++++++++++
   // this output element will be used to handle error notification and animation
   var $output = $('#out'); // the search div will only be shown as a default
+  var city = '';
+  var state = '';
+  var location = '';
+  var temp = 0;
+  var weather = '';
   var visibility = ['Light Mist', 'Heavy Mist', 'Light Fog', 'Heavy Fog', 'Light Fog Patches',
   'Heavy Fog Patches', 'Patches of Fog', 'Shallow Fog', 'Partial Fog', 'Overcast', 'Light Haze',
   'Heavy Haze'];
@@ -40,15 +45,33 @@ $(function() {
   // +++++++++++++++++++++++ End of our Variables ++++++++++++++++++++++++++++++++
   $('#search').hide();
 
+  var getLocation = function() {
+    setTimeout(function(){
+      // after the geo locationfails it will append the div with the form
+      $('#out').hide()
+      $('#search').show()
+    }, 2000)
+    // when this form is submitted it will make the ajax call
+    $('input[name="commit"]').click(function(event) {
+      event.preventDefault();
+      // we will grab the text from our form and prepare it for the jsonp request
+      // convert it to a value, trim empty spaces, and replace spaces between words with _
+      // capitalize the state
+      city = $('#city').val().trim().replace(/\s+/g, "_");
+      state = $('#state').val().trim().toUpperCase();
+
+
+    })
+
+  }
+
     if (!navigator.geolocation){
       // navigator.geolocation is the object that publishes the geolocation API
       // if the API is not supported it will output an error
       $output.html("<p>Geolocation is not supported by your browser</p>");
+      getLocation();
+
     }
-
-     var results = (function(){
-
-     })
 
     function success(position) {
       // these points will determine our geolocation and will be used for our API calls
@@ -126,6 +149,7 @@ $(function() {
 
     function error() {
       $('#out').html("Unable to retrieve your location");
+      getLocation();
     };
 
 
