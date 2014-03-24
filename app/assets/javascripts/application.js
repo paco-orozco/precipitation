@@ -46,6 +46,10 @@ $(function() {
       $output.html("<p>Geolocation is not supported by your browser</p>");
     }
 
+     var results = (function(){
+
+     })
+
     function success(position) {
       // these points will determine our geolocation and will be used for our API calls
       var latitude  = position.coords.latitude;
