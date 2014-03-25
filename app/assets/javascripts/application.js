@@ -61,8 +61,8 @@ $(function() {
       // capitalize the state
       city = $('#city').val().trim().replace(/\s+/g, "_");
       state = $('#state').val().trim().toUpperCase();
-      if(city == "" || state =="") {
-        $('#action').append('<h2>error</h2>')
+      if(city == "" || state == "") {
+        $('#search').append('<h2>error</h2>')
       } else {
       // make sure that our form has values
         $.ajax({
@@ -73,7 +73,7 @@ $(function() {
             var getState = parsed_json['current_observation']['display_location']['state'];
             var temp = parsed_json['current_observation']['temp_f'];
             var weather = parsed_json['current_observation']['weather'];
-            var wind = parsed_json['current_observation']['wind_string'];
+            var wind = parsed_json['current_observation']['relative_humidity'];
 
             console.log(getCity);
             console.log(wind)
@@ -81,7 +81,9 @@ $(function() {
             console.log(weather);
             $('#search').hide();
             $('#area').append('<h1>' + getCity + ", " + getState +'</h1>');
-            // $('#conditions').append('<h2>' + weather + " " + temp + "° " + '</h2>');
+            $('#temperature').append('<p class="hatch">' + temp + "° " + '</p>');
+            $('#conditions').append('<p class="hatch">' + weather + '</p>');
+            $('#windy').append('<p class="hatch">' + wind + '</p>');
             // +++++++++++++++++++ parse through our arrays to determine the icons
             for(var i=0; i<green.length; i++){
               if(weather == green[i]) {
@@ -159,7 +161,7 @@ $(function() {
               var getState = parsed_json['current_observation']['display_location']['state'];
               var temp = parsed_json['current_observation']['temp_f'];
               var weather = parsed_json['current_observation']['weather'];
-              var wind = parsed_json['current_observation']['wind_string'];
+              var wind = parsed_json['current_observation']['relative_humidity'];
 
               console.log(getCity);
               console.log(temp);
@@ -167,7 +169,9 @@ $(function() {
               console.log(weather);
               $('#out').hide();
               $('#area').append('<h1>' + getCity + ", " + getState +'</h1>');
-              $('#conditions').append('<h2>' + weather + " " + temp + "° " + '</h2>');
+              $('#temperature').append('<p class="hatch">' + temp + "° " + '</p>');
+              $('#conditions').append('<p class="hatch">' + weather + '</p>');
+              $('#windy').append('<p class="hatch">' + wind + '</p>');
               // +++++++++++++++++++ parse through our arrays to determine the icons
               for(var i=0; i<green.length; i++){
                 if(weather == green[i]) {
@@ -222,7 +226,7 @@ $(function() {
     };
 
 
-    $('#out').html("<p>Locating…</p>");
+    $('#out').html("<h1>Locating…</h1>");
 
     navigator.geolocation.getCurrentPosition(success, error);
 

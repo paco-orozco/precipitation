@@ -34,9 +34,16 @@ h2{margin:0;
    color:#fff;
 }
 
-#area, #conditions, #out{
+#area, #out{
   padding:1.5em;
   text-align:center;
+}
+
+p {
+  text-align:center;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #fff;
+  font-size:1.1em;
 }
 
 #results{
