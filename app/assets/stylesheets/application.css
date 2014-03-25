@@ -14,7 +14,23 @@
 
 /*background color and reset */
 body{
-  background-color: #ff7373;
+  background-color: #5ccdc9;
+}
+
+
+h1{margin:0;
+   padding:0;
+   font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+   font-weight:100;
+   font-size:3.5em;
+   color:#006561;
+}
+#conditions, #out{
+  padding:3em;
+  text-align:center;
+}
+#results{
+  padding:1.5em;
 }
   /* Margins are set to zero for the purpose of cross browser compatibility */
   /* This can be done for all elements but we will be conservative in our initial test */
@@ -114,6 +130,7 @@ body{
   .hide-phone{display:inherit !important}
   .hide-tablet{display:none !important}
   .hide-screen{display:inherit !important}
+  h1{font-size:2.5em;}
   }@media only screen and (max-width: 767px){.row{width:300px;}
   .row .row{margin:0}
   [class^="column_"],[class*=" column_"]{width:300px;margin:10px 0 0 0}
@@ -124,11 +141,13 @@ body{
   .hide-phone{display:none !important}
   .hide-tablet{display:inherit !important}
   .hide-screen{display:inherit !important}
+  h1{font-size:1.5em;}
   }@media only screen and (min-width: 480px) and (max-width: 767px){.row{margin:0 auto;width:456px}
   .row .row{margin:0;width:auto;display:inline-block}
   [class^="column_"],[class*=" column_"]{margin:10px 0 0 0;width:456px}
   .show-phone,.hide-tablet,.hide-screen{display:inherit !important}
   .show-tablet,.show-screen,.hide-phone{display:none !important}
+  h1{font-size:2em;}
   }
 
   img {
@@ -142,7 +161,7 @@ body{
     -ms-filter: invert(1);
   }
 /* objects need to be invisible */
-#action{visibility: hidden;}
+#action,#climate,#clothing{visibility: hidden;}
 
 .hatch{
   animation-name: hatch;

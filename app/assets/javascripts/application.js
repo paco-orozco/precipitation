@@ -22,7 +22,8 @@ $(function() {
   var $output = $('#out'); // the search div will only be shown as a default
   var city = '';
   var state = '';
-  var location = '';
+  var getCity = '';
+  var getState = '';
   var temp = 0;
   var weather = '';
   var visibility = ['Light Mist', 'Heavy Mist', 'Light Fog', 'Heavy Fog', 'Light Fog Patches',
@@ -67,15 +68,16 @@ $(function() {
           url : "http://api.wunderground.com/api/441472960cf74c21/conditions/q/" + state + "/" + city + ".json",
           dataType : "jsonp",
           success : function(parsed_json) {
-            var location = parsed_json['current_observation']['display_location']['city']
+            var getCity = parsed_json['current_observation']['display_location']['city']
             var temp = parsed_json['current_observation']['temp_f'];
             var weather = parsed_json['current_observation']['weather']
 
-            console.log(location);
+            console.log(getCity);
             console.log(temp);
             console.log(weather);
             $('#search').hide();
-            $('#results').append('<h1>' + location + temp + weather +'</h1>')
+            $('#area').append('<h1>' + getCity + '</h1>')
+            $('#conditions').append('<h2>' + temp + "° "+ weather +'</h2>')
             // +++++++++++++++++++ parse through our arrays to determine the icons
             for(var i=0; i<green.length; i++){
               if(weather == green[i]) {
@@ -149,15 +151,16 @@ $(function() {
             url : "http://api.wunderground.com/api/441472960cf74c21/conditions/q/" + state + "/" + city + ".json",
             dataType : "jsonp",
             success : function(parsed_json) {
-              var location = parsed_json['current_observation']['display_location']['city']
+              var getCity = parsed_json['current_observation']['display_location']['city']
               var temp = parsed_json['current_observation']['temp_f'];
               var weather = parsed_json['current_observation']['weather']
 
-              console.log(location);
+              console.log(getCity);
               console.log(temp);
               console.log(weather);
               $('#out').hide();
-              $('#results').append('<h1>' + location + temp + weather +'</h1>')
+              $('#area').append('<h1>' + getCity + '</h1>')
+              $('#conditions').append('<h2>' + temp + "° "+ weather +'</h2>')
               // +++++++++++++++++++ parse through our arrays to determine the icons
               for(var i=0; i<green.length; i++){
                 if(weather == green[i]) {
