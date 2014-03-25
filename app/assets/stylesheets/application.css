@@ -131,3 +131,6 @@
     display: block;
     margin: auto;
   }
+
+  /* For the animation divs need to be invisible */
+  #action, #climate, #clothing { visibility: hidden;}
