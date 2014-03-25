@@ -81,7 +81,7 @@ $(function() {
             console.log(weather);
             $('#search').hide();
             $('#area').append('<h1>' + getCity + ", " + getState +'</h1>');
-            $('#conditions').append('<h2>' + weather + " " + temp + "° " + '</h2>');
+            // $('#conditions').append('<h2>' + weather + " " + temp + "° " + '</h2>');
             // +++++++++++++++++++ parse through our arrays to determine the icons
             for(var i=0; i<green.length; i++){
               if(weather == green[i]) {
