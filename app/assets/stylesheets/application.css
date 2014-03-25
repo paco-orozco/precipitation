@@ -12,9 +12,13 @@
  *= require_tree .
  */
 
+/*background color and reset */
+body{
+  background-color: #ff7373;
+}
   /* Margins are set to zero for the purpose of cross browser compatibility */
   /* This can be done for all elements but we will be conservative in our initial test */
-  .row{margin:0 auto;width:960px;overflow:hidden;display:block;}
+  .row{margin:0 auto;width:960px;overflow:hidden;display:block;padding: 10px;}
   .row .row{margin:0 -16px 0 -16px;width:auto;display:inline-block}
   [class^="column_"],[class*=" column_"]{margin:0 16px 0 16px;float:left;display:inline}
   .column_1{width:48px}
