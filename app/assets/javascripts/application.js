@@ -81,9 +81,9 @@ $(function() {
             console.log(weather);
             $('#search').hide();
             $('#area').append('<h1>' + getCity + ", " + getState +'</h1>');
-            $('#temperature').append('<p class="hatch">' + temp + "° " + '</p>');
+            $('#temperature').append('<p class="hatch">' + temp + "° " + ' / temp'+ '</p>');
             $('#conditions').append('<p class="hatch">' + weather + '</p>');
-            $('#windy').append('<p class="hatch">' + wind + '</p>');
+            $('#windy').append('<p class="hatch">' + wind + ' humidity' + '</p>');
             // +++++++++++++++++++ parse through our arrays to determine the icons
             for(var i=0; i<green.length; i++){
               if(weather == green[i]) {
@@ -173,9 +173,9 @@ $(function() {
               console.log(weather);
               $('#out').hide();
               $('#area').append('<h1>' + getCity + ", " + getState +'</h1>');
-              $('#temperature').append('<p class="hatch">' + temp + "° " + '</p>');
+              $('#temperature').append('<p class="hatch">' + temp + "° " + ' / temp'+ '</p>');
               $('#conditions').append('<p class="hatch">' + weather + '</p>');
-              $('#windy').append('<p class="hatch">' + wind + '</p>');
+              $('#windy').append('<p class="hatch">' + wind + ' humidity' + '</p>');
               // +++++++++++++++++++ parse through our arrays to determine the icons
               for(var i=0; i<green.length; i++){
                 if(weather == green[i]) {
