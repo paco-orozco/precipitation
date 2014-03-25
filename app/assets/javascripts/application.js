@@ -59,7 +59,7 @@ $(function() {
       // capitalize the state
       city = $('#city').val().trim().replace(/\s+/g, "_");
       state = $('#state').val().trim().toUpperCase();
-      if(city == "") {
+      if(city == "" || state =="") {
         $('#action').append('<h2>error</h2>')
       } else {
       // make sure that our form has values
