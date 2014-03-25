@@ -39,6 +39,10 @@ h2{margin:0;
   text-align:center;
 }
 
+#search{
+  padding-top:3em;
+}
+
 p {
   text-align:center;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
