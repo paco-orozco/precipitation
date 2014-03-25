@@ -80,8 +80,8 @@ $(function() {
             console.log(temp);
             console.log(weather);
             $('#search').hide();
-            $('#area').append('<h1>' + getCity + ", " + getState +'</h1>')
-            $('#conditions').append('<h2>' + weather + " " + temp + "° " + '</h2>')
+            $('#area').append('<h1>' + getCity + ", " + getState +'</h1>');
+            $('#conditions').append('<h2>' + weather + " " + temp + "° " + '</h2>');
             // +++++++++++++++++++ parse through our arrays to determine the icons
             for(var i=0; i<green.length; i++){
               if(weather == green[i]) {
@@ -112,16 +112,16 @@ $(function() {
             }
             // ++++++++++++++++++++++ end of initial append +++++++++++++++++++++
             if(temp > 70 && temp < 98) {
-              $('#clothing').html('<img class="hatch" src="assets/t_shirt-128.png"/>')
+              $('#clothing').html('<img class="hatch" src="assets/t_shirt-128.png"/>');
             }
             else if(temp > 45 && temp < 70) {
-              $('#clothing').html('<img class="hatch" src="assets/jumper-128.png"/>')
+              $('#clothing').html('<img class="hatch" src="assets/jumper-128.png"/>');
             }
             else if(temp < 45) {
-              $('#clothing').html('<img class="hatch" src="assets/jacket-128.png"/>')
+              $('#clothing').html('<img class="hatch" src="assets/jacket-128.png"/>');
             }
             else if(temp > 98) {
-              $('#clothing').html('<img class="hatch" src="assets/shorts-128.png"/>')
+              $('#clothing').html('<img class="hatch" src="assets/shorts-128.png"/>');
             }
            //++++++++++++++++++++++++++++++++++++++++++++++++
           }
@@ -155,18 +155,19 @@ $(function() {
             url : "http://api.wunderground.com/api/441472960cf74c21/conditions/q/" + state + "/" + city + ".json",
             dataType : "jsonp",
             success : function(parsed_json) {
-              var getCity = parsed_json['current_observation']['display_location']['city']
-              var getState = parsed_json['current_observation']['display_location']['state']
+              var getCity = parsed_json['current_observation']['display_location']['city'];
+              var getState = parsed_json['current_observation']['display_location']['state'];
               var temp = parsed_json['current_observation']['temp_f'];
-              var weather = parsed_json['current_observation']['weather']
+              var weather = parsed_json['current_observation']['weather'];
               var wind = parsed_json['current_observation']['wind_string'];
 
               console.log(getCity);
               console.log(temp);
+              console.log(wind);
               console.log(weather);
               $('#out').hide();
-              $('#area').append('<h1>' + getCity + ", " + getState +'</h1>')
-              $('#conditions').append('<h2>' + weather + " " + temp + "° " + '</h2>')
+              $('#area').append('<h1>' + getCity + ", " + getState +'</h1>');
+              $('#conditions').append('<h2>' + weather + " " + temp + "° " + '</h2>');
               // +++++++++++++++++++ parse through our arrays to determine the icons
               for(var i=0; i<green.length; i++){
                 if(weather == green[i]) {
@@ -197,16 +198,16 @@ $(function() {
               }
               // ++++++++++++++++++++++ end of initial append +++++++++++++++++++++
               if(temp > 70 && temp < 98) {
-                $('#clothing').html('<img class="hatch" src="assets/t_shirt-128.png"/>')
+                $('#clothing').html('<img class="hatch" src="assets/t_shirt-128.png"/>');
               }
               else if(temp > 45 && temp < 70) {
-                $('#clothing').html('<img class="hatch" src="assets/jumper-128.png"/>')
+                $('#clothing').html('<img class="hatch" src="assets/jumper-128.png"/>');
               }
               else if(temp < 45) {
-                $('#clothing').html('<img class="hatch" src="assets/jacket-128.png"/>')
+                $('#clothing').html('<img class="hatch" src="assets/jacket-128.png"/>');
               }
               else if(temp > 98) {
-                $('#clothing').html('<img class="hatch" src="assets/shorts-128.png"/>')
+                $('#clothing').html('<img class="hatch" src="assets/shorts-128.png"/>');
               }
              //++++++++++++++++++++++++++++++++++++++++++++++++
             }
