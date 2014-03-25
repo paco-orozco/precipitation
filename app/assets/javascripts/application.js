@@ -100,7 +100,7 @@ $(function() {
             // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             for(var l=0; l<visibility.length; l++){
               if(weather == visibility[l]) {
-                $('#action').append('<img src="assets/flashlight-128.png"/>');
+                $('#action').append('<img src="assets/flash_light-128.png"/>');
                 $('#climate').append('<img src="assets/fog_night-128.png"/>');
               }
             }
@@ -182,7 +182,7 @@ $(function() {
               // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               for(var l=0; l<visibility.length; l++){
                 if(weather == visibility[l]) {
-                  $('#action').append('<img src="assets/flashlight-128.png"/>');
+                  $('#action').append('<img src="assets/flash_light-128.png"/>');
                   $('#climate').append('<img src="assets/fog_night-128.png"/>');
                 }
               }
