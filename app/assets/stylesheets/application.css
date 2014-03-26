@@ -40,7 +40,8 @@ h2{margin:0;
 }
 
 #search{
-  padding-top:3em;
+  padding:1em;
+  text-align:center;
 }
 
 p {
@@ -175,7 +176,7 @@ p {
   }
 /* ++++++++++++++++++++++++++ form styling ++++++++++++++++++++++++++++++++*/
 *:focus{outline:none;}
-
+#search h1 {margin-bottom:0.5em;}
 form input[type="text"]{
   display:block;
   height:20px;
@@ -184,12 +185,31 @@ form input[type="text"]{
   border:none;
   margin:5px;
 }
+
 form input[type="submit"]{
-  height:20px;
+  display:block;
+  height:30px;
   width:100px;
   padding:5px 8px;
   border:none;
   margin:0 5px;
+  color:#fff;
+  font-weight:normal;
+  font-size:1em;
+  background-color:#006561;
+}
+
+form input[type="submit"]:hover{
+  display:block;
+  height:30px;
+  width:100px;
+  padding:5px 8px;
+  border:none;
+  margin:0 5px;
+  color:#006561;
+  font-weight:normal;
+  font-size:1em;
+  background-color:#fff;
 }
 
 /* ++++++++++++++++++++++++++ form end ++++++++++++++++++++++++++++++++++++*/
