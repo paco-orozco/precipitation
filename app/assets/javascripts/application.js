@@ -234,7 +234,7 @@ $(function() {
     };
 
 
-    $('#out').html("<h1>Locating…</h1>");
+    $('#out').html('<div class="spinner"></div>');
 
     navigator.geolocation.getCurrentPosition(success, error);
 
