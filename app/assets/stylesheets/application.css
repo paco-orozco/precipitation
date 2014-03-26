@@ -173,7 +173,26 @@ p {
   .show-tablet,.show-screen,.hide-phone{display:none !important}
 
   }
+/* ++++++++++++++++++++++++++ form styling ++++++++++++++++++++++++++++++++*/
+*:focus{outline:none;}
 
+form input[type="text"]{
+  display:block;
+  height:20px;
+  width:300px;
+  padding:5px 8px;
+  border:none;
+  margin:5px;
+}
+form input[type="submit"]{
+  height:20px;
+  width:100px;
+  padding:5px 8px;
+  border:none;
+  margin:0 5px;
+}
+
+/* ++++++++++++++++++++++++++ form end ++++++++++++++++++++++++++++++++++++*/
   img {
     display: block;
     margin: auto;
