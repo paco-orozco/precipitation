@@ -87,7 +87,7 @@ $(function() {
             // +++++++++++++++++++ parse through our arrays to determine the icons
             for(var i=0; i<green.length; i++){
               if(weather == green[i]) {
-                $('#query').append('<h1 class="slideDown">Run!</h1>');
+                $('#query').append('<h2 class="slideDown">Run!</h2>');
                 $('#action').append('<img class="hatch" src="assets/running-128.png"/>');
                 $('#climate').append('<img class="hatch" src="assets/partly_cloudy_day-128.png"/>');
               }
@@ -95,7 +95,7 @@ $(function() {
             // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             for(var j=0; j<red.length; j++){
               if(weather == red[j]) {
-                $('#query').append('<h1 class="slideDown">Stay at Home</h1>');
+                $('#query').append('<h2 class="slideDown">Stay at Home</h2>');
                 $('#action').append('<img  class="hatch" src="assets/livingroom-128.png"/>');
                 $('#climate').append('<img class="hatch" src="assets/rain-128.png"/>');
               }
@@ -103,7 +103,7 @@ $(function() {
             // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             for(var k=0; k<danger.length; k++){
               if(weather == danger[k]) {
-                $('#query').append('<h1 class="slideDown">Do not leave your house!</h1>');
+                $('#query').append('<h2 class="slideDown">Do not leave your house!</h2>');
                 $('#action').append('<img class="hatch" src="assets/self_distruct_button-128.png"/>');
                 $('#climate').append('<img class="hatch" src="assets/explosion-128.png"/>');
               }
@@ -111,7 +111,7 @@ $(function() {
             // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             for(var l=0; l<visibility.length; l++){
               if(weather == visibility[l]) {
-                $('#query').append('<h1 class="slideDown">Run! Visibility is low.</h1>');
+                $('#query').append('<h2 class="slideDown">Run! Visibility is low.</h2>');
                 $('#action').append('<img class="hatch" src="assets/flash_light-128.png"/>');
                 $('#climate').append('<img class="hatch" src="assets/fog_night-128.png"/>');
               }
@@ -179,7 +179,7 @@ $(function() {
               // +++++++++++++++++++ parse through our arrays to determine the icons
               for(var i=0; i<green.length; i++){
                 if(weather == green[i]) {
-                  $('#query').append('<h1 class="slideDown">Run!</h1>');
+                  $('#query').append('<h2 class="slideDown">Run!</h2>');
                   $('#action').append('<img class="hatch" src="assets/running-128.png"/>');
                   $('#climate').append('<img class="hatch" src="assets/partly_cloudy_day-128.png"/>');
                 }
@@ -187,7 +187,7 @@ $(function() {
               // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               for(var j=0; j<red.length; j++){
                 if(weather == red[j]) {
-                  $('#query').append('<h1 class="slideDown">Stay at Home</h1>');
+                  $('#query').append('<h2 class="slideDown">Stay at Home</h2>');
                   $('#action').append('<img class="hatch" src="assets/livingroom-128.png"/>');
                   $('#climate').append('<img class="hatch" src="assets/rain-128.png"/>');
                 }
@@ -195,7 +195,7 @@ $(function() {
               // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               for(var k=0; k<danger.length; k++){
                 if(weather == danger[k]) {
-                  $('#query').append('<h1 class="slideDown">Do not leave your house!</h1>');
+                  $('#query').append('<h2 class="slideDown">Do not leave your house!</h2>');
                   $('#action').append('<img class="hatch" src="assets/self_distruct_button-128.png"/>');
                   $('#climate').append('<img class="hatch" src="assets/explosion-128.png"/>');
                 }
@@ -203,7 +203,7 @@ $(function() {
               // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               for(var l=0; l<visibility.length; l++){
                 if(weather == visibility[l]) {
-                  $('#query').append('<h1 class="slideDown">Run! Visibility is low.</h1>');
+                  $('#query').append('<h2 class="slideDown">Run! Visibility is low.</h2>');
                   $('#action').append('<img class="hatch" src="assets/flash_light-128.png"/>');
                   $('#climate').append('<img class="hatch" src="assets/fog_night-128.png"/>');
                 }
