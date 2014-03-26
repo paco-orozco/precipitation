@@ -136,6 +136,7 @@ $(function() {
     })//end of input function
   }// end of getLocation
 
+
     if (!navigator.geolocation){
       // navigator.geolocation is the object that publishes the geolocation API
       // if the API is not supported it will output an error
