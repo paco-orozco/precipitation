@@ -175,6 +175,7 @@ p {
   .hide-screen{display:inherit !important}
   h1{font-size:1.8em;}
   h2{font-size:1.4em;}
+  form input[type="text"]{display:block;height:20px;width:200px;padding:5px 8px;border:none;margin:5px;}
   #results,#area,#query{padding:0.5em;}
   }@media only screen and (min-width: 480px) and (max-width: 767px){.row{margin:0 auto;width:456px}
   .row .row{margin:0;width:auto;display:inline-block}
