@@ -182,7 +182,7 @@ p {
   [class^="column_"],[class*=" column_"]{margin:10px 0 0 0;width:456px}
   .show-phone,.hide-tablet,.hide-screen{display:inherit !important}
   .show-tablet,.show-screen,.hide-phone{display:none !important}
-
+  form input[type="text"]{display:block;height:20px;width:200px;padding:5px 8px;border:none;margin:5px;}
   }
 /* ++++++++++++++++++++++++++ form styling ++++++++++++++++++++++++++++++++*/
 *:focus{
